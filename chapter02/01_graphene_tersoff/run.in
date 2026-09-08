@@ -1,0 +1,9 @@
+potential ../../potentials/Graphene_Lindsay_2010.txt
+velocity 300
+
+
+ensemble nvt_bdp 300 300 100
+time_step 1
+dump_thermo 1000
+dump_xyz 100000 final.xyz
+run 100000
