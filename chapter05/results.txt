@@ -1,0 +1,60 @@
+SNES/LJ teaching figures used in main-v8.tex
+
+Main regularization comparison
+- training points: 30
+- test points: 1000
+- training-label noise std: 0.10
+- network: 1-10-10-1 (141 parameters)
+- SNES population: 18
+- generations: 3000
+- lambda_1/lambda_2:
+  none:   0 / 0
+  L2:     0 / 0.02
+  L1+L2:  0.02 / 0.02
+
+Final training RMSE / clean test RMSE
+- none:   0.075254 / 0.077343
+- L2:     0.095961 / 0.047982
+- L1+L2:  0.099920 / 0.047604
+
+Best clean test RMSE during the 3000-generation trajectory
+- none:   0.0412
+- L2:     0.0397
+- L1+L2:  0.0423
+
+Near-zero parameters, |theta| < 0.01
+- none:   1 / 141
+- L2:     3 / 141
+- L1+L2:  6 / 141
+
+Data-quality sweep
+- regularization: lambda_1=lambda_2=0.02
+- generations: 1000
+- 30 uniformly spaced training points
+noise_std : clean_test_RMSE
+0.00 : 0.046138
+0.02 : 0.045445
+0.05 : 0.045833
+0.10 : 0.050729
+0.20 : 0.087010
+
+Data-efficiency sweep
+- regularization: lambda_1=lambda_2=0.02
+- generations: 1000
+- noise std: 0.10
+N_train : clean_test_RMSE
+5   : 0.749553
+10  : 0.354877
+20  : 0.098257
+30  : 0.050729
+50  : 0.044908
+100 : 0.044374
+
+Coverage study
+- 30 training points in every case
+- noise std: 0.10
+- regularization: lambda_1=lambda_2=0.02
+- generations: 1500
+Uniform coverage:                 0.048219
+Missing short-range data:        0.365146
+Gap in configuration space:      0.160006
